@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .navbar {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        #dynamicIframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="../index.html">Home</a></li>
+            <li class="nav-item"><a href="../chatroom/index.html">Chatroom</a></li>
+            <li class="nav-item"><a href="../about/about.html">About</a></li>
+            <li class="nav-item"><a href="../games/index.html">Games</a></li>
+            <li class="nav-item"><a href="../proxy/proxy.html">Unblocker</a></li>
+            <li class="nav-item selected"><a href="../tools/index.html">Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="title">Unblocked Android</div>
+        <iframe id="dynamicIframe"></iframe>
+    </div>
+
+    <script>
+        // Get the current domain (without path)
+        var currentDomain = window.location.hostname;
+
+        // Get the current protocol (http or https)
+        var currentProtocol = window.location.protocol;
+
+        // Get the current port (if any)
+        var currentPort = window.location.port ? ':' + window.location.port : '';
+
+        // Construct the full URL for the iframe, including port if present
+        var iframeUrl = currentProtocol + '//' + currentDomain + currentPort + '/uv/service/hvtrs8%2F-arpgtkzg.ko-eobgd-b%5D5iwxnzbrtjiz3z6%7Brzkiq05j4s%3Ffetiae%3Fgclcx%7Btcbq7%24oqVgrqimn%3F11.2%26mrkeltctkol%3Dnaldqccpg';
+
+        // Set the iframe src to the constructed URL
+        document.getElementById('dynamicIframe').src = iframeUrl;
+    </script>
+</body>
+</html>

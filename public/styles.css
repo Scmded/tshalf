@@ -1,0 +1,376 @@
+:root {
+    --background: #121212;
+    --navbar: #1e1e1e;
+    --text: #e0e0e0;
+    --accent: #ff5252;
+    --hover: #292929;
+    --button-bg: #ff5252;
+    --button-text: #ffffff;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Raleway', sans-serif;
+}
+
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--navbar);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+/* Navbar Links */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--font-secondary);
+    color: var(--text);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-item a:hover {
+    background-color: var(--hover);
+    transform: scale(1.1);
+}
+
+/* Selected Nav Item */
+.nav-item.selected a {
+    color: var(--accent);
+    position: relative;
+}
+
+.nav-item.selected a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 1px;
+}
+
+/* Main Content Styling */
+.content {
+    margin-top: 80px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #bdbdbd;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* Call to Action Button */
+.cta-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #ff7979;
+    transform: scale(1.05);
+}
+
+/* Games and Apps Section */
+.games-section,
+.apps-section {
+    margin-top: 50px;
+    padding: 40px 20px;
+}
+
+.games-section h2,
+.apps-section h2 {
+    font-size: 2rem;
+    font-family: var(--font-secondary);
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* Container for Games and Apps */
+.games-container,
+.apps-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between items */
+    gap: 20px; /* Add space between cards */
+    flex-wrap: wrap; /* Allow the items to wrap to the next line */
+}
+
+/* Game and App Card Styling */
+.game-card,
+.app-card {
+    width: 300px; /* Card width */
+    height: 180px; /* Card height */
+    background-color: var(--navbar);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row; /* Arrange the content horizontally */
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+    position: relative; /* For overlaying text */
+}
+
+/* Images in Game and App Cards */
+.game-card img,
+.app-card img {
+    width: 60%; /* Image takes up most of the card */
+    height: 100%; /* Ensure the image covers the height of the card */
+    object-fit: cover;
+}
+
+/* Text and Play Button Area */
+.game-card .card-content,
+.app-card .card-content {
+    width: 40%; /* The text and play button area takes the remaining 40% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Hidden Title and Play Button by Default */
+.game-card .card-content h3,
+.app-card .card-content h3 {
+    opacity: 0; /* Hide title initially */
+    transition: opacity 0.3s ease;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Show Title on Hover */
+.game-card:hover .card-content h3,
+.app-card:hover .card-content h3 {
+    opacity: 1; /* Show title when card is hovered */
+}
+
+/* Hover Effect on Cards */
+.game-card:hover,
+.app-card:hover {
+    transform: scale(1.05);
+    background-color: var(--hover);
+}
+
+/* Play Button Styling */
+.play-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+/* Play Button Hover Effect */
+.play-button:hover {
+    background-color: #ff7979;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile and Smaller Screens */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    /* Adjust Game/App Cards for Mobile */
+    .game-card,
+    .app-card {
+        width: 250px; /* Adjust width for smaller screens */
+        height: 150px; /* Adjust height for smaller screens */
+    }
+
+    .game-card img,
+    .app-card img {
+        width: 50%; /* Make the image bigger for mobile screens */
+    }
+
+    .game-card .card-content,
+    .app-card .card-content {
+        width: 50%; /* Adjust content area for smaller screens */
+    }
+}
+/* General Body Styling */
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--background);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Games Section Container */
+.games-container {
+    display: flex;              /* Align game cards in a row */
+    gap: 10px;                  /* Reduce the space between cards */
+    flex-wrap: wrap;            /* Allow wrapping for smaller screens */
+    justify-content: center;    /* Center the game cards */
+}
+
+/* Game Card Styling */
+.game-card {
+    width: 270px;               /* Set a fixed width for the cards */
+    height: 180px;              /* Fixed height for consistency */
+    background-color: var(--navbar);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    margin: 10px;               /* Add margin to ensure proper spacing */
+}
+
+/* Game Card Image */
+.game-card img {
+    width: 60%;                 /* Image takes up 60% of the card width */
+    height: 100%;               /* Full height of the card */
+    object-fit: cover;
+}
+
+/* Content of Game Card */
+.game-card .card-content {
+    width: 40%;                 /* Title and button area takes up 40% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    opacity: 0;                  /* Initially hide content */
+    transition: opacity 0.3s ease;
+}
+
+/* Show Content on Hover */
+.game-card:hover .card-content {
+    opacity: 1;                  /* Make title and button visible on hover */
+}
+
+/* Title in the Card */
+.game-card .card-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Play Button */
+.play-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Play Button Hover */
+.play-button:hover {
+    background-color: #ff7979;
+}
+
+/* Hover Effect for Game Cards */
+.game-card:hover {
+    transform: scale(1.05);
+    background-color: var(--hover);
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .game-card {
+        width: 230px;  /* Reduce the width of the game cards on mobile */
+        height: 150px;
+    }
+
+    .game-card img {
+        width: 50%;     /* Make image smaller on mobile */
+    }
+
+    .game-card .card-content {
+        width: 50%;     /* Adjust the content width */
+    }
+}
